@@ -54,6 +54,6 @@ public class Triangulo extends FiguraBidimensional{
      */
     @Override
     public String toString(){
-        return String.format("El area del triángulo es: %f", obtenerArea());
+        return String.format("triángulo");
     }
 }

@@ -49,6 +49,6 @@ public class Circulo extends FiguraBidimensional{
      */
     @Override
     public String toString(){
-        return String.format("El area del circulo es: %f", obtenerArea());
+        return String.format("circulo");
     }
 }

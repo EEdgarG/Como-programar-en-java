@@ -46,6 +46,6 @@ public class Cuadrado extends FiguraBidimensional{
      */
     @Override
     public String toString(){
-        return String.format("El area del cuadrado es: %f", obtenerArea());
+        return String.format("cuadrado");
     }
 }

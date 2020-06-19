@@ -45,6 +45,6 @@ public class Tetraedro extends FiguraTridimensional{
      */
     @Override
     public String toString(){
-        return String.format("Para el tetraedro%narea de la superficie: %f%nvolumen: %f", obtenerArea(), obtenerVolumen());
+        return String.format("tetraedro");
     }
 }

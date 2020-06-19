@@ -40,7 +40,6 @@ public class Esfera extends FiguraTridimensional{
      */
     @Override
     public String toString(){
-        return String.format("Para la esfera%nel area de su superficie: %f%nel volumen: %f",
-                obtenerArea(), obtenerVolumen());
+        return String.format("esfera");
     }
 }

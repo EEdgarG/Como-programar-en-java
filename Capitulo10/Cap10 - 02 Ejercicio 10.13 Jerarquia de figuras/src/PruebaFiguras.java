@@ -25,19 +25,13 @@ public class PruebaFiguras {
         figuras[5] = new Tetraedro(6, 4);
         
         for(Figura figura: figuras){
-            if(figura instanceof Circulo)
-                System.out.printf("Circulo con instanceof");
-            if(figura instanceof Cuadrado)
-                System.out.printf("Cuadrado con instanceof");
-            if(figura instanceof Triangulo)
-                System.out.printf("Triangulo con instanceof");
-            if(figura instanceof Esfera)
-                System.out.printf("Esfera con instanceof");
-            if(figura instanceof Cubo)
-                System.out.printf("Cubo con instanceof");
-            if(figura instanceof Tetraedro)
-                System.out.printf("Tetraedro con instanceof");
-            System.out.printf("%s%n%n", figura);
+            if(figura instanceof FiguraBidimensional){
+                System.out.printf("Area de %s: %f%n%n", figura, ((FiguraBidimensional)figura).obtenerArea());
+            }
+            if(figura instanceof FiguraTridimensional){
+                System.out.printf("Figura %s%narea superficial: %f%nvolumen: %f%n%n",
+                        figura, ((FiguraTridimensional)figura).obtenerArea(), ((FiguraTridimensional)figura).obtenerVolumen());
+            }
         }
     }
 }

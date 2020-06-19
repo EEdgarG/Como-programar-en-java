@@ -44,6 +44,6 @@ public class Cubo extends FiguraTridimensional{
      */
     @Override
     public String toString(){
-        return String.format("Para el cubo%nel area de su superficie: %f%nsu volumen: %f", obtenerArea(), obtenerVolumen());
+        return String.format("cubo");
     }
 }
