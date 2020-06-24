@@ -5,7 +5,7 @@
  */
 
 /**
- * 
+ * Transforma una fecha en formato dd/mm/aaaa a formato MesActual dd, aaaa
  * @author EEdgarG <eedduardo33@gmail.com>
  * @date Jun 23, 2020
  * @time 5:56:02 PM
