@@ -12,14 +12,163 @@
  */
 public class PruebaMorse {
     public static void main(String[] args){
-        String oracion = "Hola mundo";
+        String oracion = "Karina De La Rosa";
         
+        
+        String morse = letrasAMorse(oracion);
+        System.out.printf("%s%n", letrasAMorse(oracion));
+        
+        String literal = oracionMorseAPalabras(morse);
+        System.out.printf("%s%n", literal);
+    }
+    public static String oracionMorseAPalabras(String morse){
+        String oracionL = "";
+        for(String oracionM: oracionAPalabrasMorse(morse)){//Divide las palabras separadas por dos espacios
+            for(String letra: oracionAPalabras(oracionM))//Divide las letras separadas por un espacio
+                oracionL += morseALetra(letra);
+            oracionL += " ";
+        }
+        return oracionL;
+    }
+    /**
+     * Devuelve el código morse en su forma literal
+     * @param morse String
+     * @return String
+     */
+    public static String morseALetra(String morse){
+        String letra = "";
+        switch(morse){
+            case ".-":
+                letra += "a";
+                break;
+            case "-...":
+                letra += "b";
+                break;
+            case "-.-.":
+                letra += "c";
+                break;
+            case "-..":
+                letra += "d";
+                break;
+            case ".":
+                letra += "e";
+                break;
+            case "..-.":
+                letra += "f";
+                break;
+            case "--.":
+                letra += "g";
+                break;
+            case "....":
+                letra += "h";
+                break;
+            case "..":
+                letra += "i";
+                break;
+            case ".---":
+                letra += "j";
+                break;
+            case "-.-":
+                letra += "k";
+                break;
+            case ".-..":
+                letra += "l";
+                break;
+            case "--":
+                letra += "m";
+                break;
+            case "-.":
+                letra += "n";
+                break;
+            case "---":
+                letra += "o";
+                break;
+            case ".--.":
+                letra += "p";
+                break;
+            case "--.-":
+                letra += "q";
+                break;
+            case ".-.":
+                letra += "r";
+                break;
+            case "...":
+                letra += "s";
+                break;
+            case "-":
+                letra += "t";
+                break;
+            case "..-":
+                letra += "u";
+                break;
+            case "...-":
+                letra += "v";
+                break;
+            case ".--":
+                letra += "w";
+                break;
+            case "-..-":
+                letra += "x";
+                break;
+            case "-.--":
+                letra += "y";
+                break;
+            case "--..":
+                letra += "z";
+                break;
+            case ".----":
+                letra += "1";
+                break;
+            case "..---":
+                letra += "2";
+                break;
+            case "...--":
+                letra += "3";
+                break;
+            case "....-":
+                letra += "4";
+                break;
+            case ".....":
+                letra += "5";
+                break;
+            case "-....":
+                letra += "6";
+                break;
+            case "--...":
+                letra += "7";
+                break;
+            case "---..":
+                letra += "8";
+                break;
+            case "----.":
+                letra += "9";
+                break;
+            case "-----":
+                letra += "0";
+                break;
+        }
+        return letra;
+    }
+    /**
+     * Devuelve una oración en morse dividida como un arreglo de las palabras que la componen
+     * @param oracion String
+     * @return String[]
+     */
+    public static String[] oracionAPalabrasMorse(String oracion){
+        return oracion.toLowerCase().split("\\s\\s");
+    }
+    /**
+     * Devuelve una oración convertida a morse
+     * @param oracion String
+     * @return String
+     */
+    public static String letrasAMorse(String oracion){
         String[] palabras = oracionAPalabras(oracion);
         String oracionMorse = "";
         for(String palabra: palabras)
             oracionMorse += String.format("%s ", palabraAMorse(palabra));
         
-        System.out.printf("%s%n", oracionMorse);
+        return oracionMorse;
     }
     /**
      * Devuelve una oración dividida como un arreglo de las palabras que la componen
@@ -39,7 +188,8 @@ public class PruebaMorse {
         String palabraMorse = "";
         
         for(int i = 0; i < palabraMinuscula.length(); i++)
-            palabraMorse += letraAMorse(String.valueOf(palabraMinuscula.charAt(i)));
+            palabraMorse += String.format("%s ", letraAMorse(String.valueOf(palabraMinuscula.charAt(i))));
+//            palabraMorse += letraAMorse(String.valueOf(palabraMinuscula.charAt(i)));
         
         return palabraMorse;
     }
@@ -52,112 +202,112 @@ public class PruebaMorse {
         String morse = "";
         switch(letra){
             case "a":
-                morse += ".-";
+                morse += ".-";//2
                 break;
             case "b":
-                morse += "-...";
+                morse += "-...";//4
                 break;
             case "c":
-                morse += "-.-.";
+                morse += "-.-.";//4
                 break;
             case "d":
-                morse += "-..";
+                morse += "-..";//3
                 break;
             case "e":
-                morse += ".";
+                morse += ".";//1
                 break;
             case "f":
-                morse += "..-.";
+                morse += "..-.";//4
                 break;
             case "g":
-                morse += "--.";
+                morse += "--.";//3
                 break;
             case "h":
-                morse += "....";
+                morse += "....";//4
                 break;
             case "i":
-                morse += "..";
+                morse += "..";//2
                 break;
             case "j":
-                morse += ".---";
+                morse += ".---";//4
                 break;
             case "k":
-                morse += "-.-";
+                morse += "-.-";//3
                 break;
             case "l":
-                morse += ".-..";
+                morse += ".-..";//4
                 break;
             case "m":
-                morse += "--";
+                morse += "--";//2
                 break;
             case "n":
-                morse += "-.";
+                morse += "-.";//2
                 break;
             case "o":
-                morse += "---";
+                morse += "---";//3
                 break;
             case "p":
-                morse += ".--.";
+                morse += ".--.";//4
                 break;
             case "q":
-                morse += "--.-";
+                morse += "--.-";//4
                 break;
             case "r":
-                morse += ".-.";
+                morse += ".-.";//3
                 break;
             case "s":
-                morse += "...";
+                morse += "...";//3
                 break;
             case "t":
-                morse += "-";
+                morse += "-";//1
                 break;
             case "u":
-                morse += "..-";
+                morse += "..-";//3
                 break;
             case "v":
-                morse += "...-";
+                morse += "...-";//4
                 break;
             case "w":
-                morse += ".--";
+                morse += ".--";//3
                 break;
             case "x":
-                morse += "-..-";
+                morse += "-..-";//4
                 break;
             case "y":
-                morse += "-.--";
+                morse += "-.--";//4
                 break;
             case "z":
-                morse += "--..";
+                morse += "--..";//4
                 break;
             case "1":
-                morse += ".----";
+                morse += ".----";//5
                 break;
             case "2":
-                morse += "..---";
+                morse += "..---";//5
                 break;
             case "3":
-                morse += "...--";
+                morse += "...--";//5
                 break;
             case "4":
-                morse += "....-";
+                morse += "....-";//5
                 break;
             case "5":
-                morse += ".....";
+                morse += ".....";//5
                 break;
             case "6":
-                morse += "-....";
+                morse += "-....";//5
                 break;
             case "7":
-                morse += "--...";
+                morse += "--...";//5
                 break;
             case "8":
-                morse += "---..";
+                morse += "---..";//5
                 break;
             case "9":
-                morse += "----.";
+                morse += "----.";//5
                 break;
             case "0":
-                morse += "-----";
+                morse += "-----";//5
                 break;
         }
         return morse;
