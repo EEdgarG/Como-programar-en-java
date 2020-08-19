@@ -5,7 +5,8 @@
  */
 
 /**
- * 
+ * Transforma una oración en español (sin ñ) en código morse, además transforma el código morse
+ * en oraciones en español (sin ñ)
  * @author EEdgarG <eedduardo33@gmail.com>
  * @date Jun 24, 2020
  * @time 7:55:14 PM
